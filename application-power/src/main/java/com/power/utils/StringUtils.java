@@ -180,14 +180,17 @@ public class StringUtils {
     public static boolean isPassword(String str) {
         return validate(str, PASSWORD_PATTERN);
     }
+
     /**
      * 非负整数
+     *
      * @param str
      * @return
      */
-    public static boolean isNonnegativeInteger(String str){
-        return validate(str ,"^\\d+$");
+    public static boolean isNonnegativeInteger(String str) {
+        return validate(str, "^\\d+$");
     }
+
     public static boolean isSameCharacter(String s) {
         s = s.toUpperCase();
         String character = s.substring(0, 1);
@@ -337,7 +340,7 @@ public class StringUtils {
     }
 
     /**
-     *
+     * 下划线转驼峰并且首字母大写
      * @param s
      * @return
      */
@@ -348,6 +351,7 @@ public class StringUtils {
         s = underlineToCamel(s);
         return s.substring(0, 1).toUpperCase() + s.substring(1);
     }
+
     /**
      * 首字母转大写
      *
@@ -440,7 +444,6 @@ public class StringUtils {
     }
 
 
-
     public static String binaryString2hexString(String bString) {
         if (bString == null || bString.equals("") || bString.length() % 8 != 0)
             return null;
@@ -478,10 +481,10 @@ public class StringUtils {
     }
 
     public static boolean isUuid(String str) {
-        if(isNotEmpty(str)){
+        if (isNotEmpty(str)) {
             str = trim(str);
             return !(str.length() < 32 || str.length() > 50);
-        }else{
+        } else {
             return false;
         }
     }
@@ -532,8 +535,9 @@ public class StringUtils {
             return "";
         }
     }
+
     public static String replaceHtml(String html) {
-        if (isEmpty(html)){
+        if (isEmpty(html)) {
             return "";
         }
         String regEx = "<.+?>";
@@ -542,16 +546,18 @@ public class StringUtils {
         String s = m.replaceAll("");
         return s;
     }
-    public static String replaceMobileHtml(String html){
-        if (html == null){
+
+    public static String replaceMobileHtml(String html) {
+        if (html == null) {
             return "";
         }
         return html.replaceAll("<([a-z]+?)\\s+?.*?>", "<$1>");
     }
-    public static boolean strToBoolean(String str){
-        if(isEmpty(str)){
+
+    public static boolean strToBoolean(String str) {
+        if (isEmpty(str)) {
             return false;
-        }else{
+        } else {
             str = str.trim();
             return Boolean.valueOf(str);
         }
@@ -559,10 +565,11 @@ public class StringUtils {
 
     /**
      * 提取中文
+     *
      * @param str
      * @return
      */
-    public static String getChinese(String str){
+    public static String getChinese(String str) {
         String reg = "[^\u4e00-\u9fa5]";
         str = str.replaceAll(reg, "");
         return str;
@@ -570,23 +577,25 @@ public class StringUtils {
 
     /**
      * 提非中文
+     *
      * @param str
      * @return
      */
-    public static String getNotChinese(String str){
+    public static String getNotChinese(String str) {
         String reg = "[^A-Za-z0-9_]";
         str = str.replaceAll(reg, "");
         return str;
     }
+
     /**
      * 去掉指定前缀
      *
-     * @param str 字符串
+     * @param str    字符串
      * @param prefix 前缀
      * @return 切掉后的字符串，若前缀不是 preffix， 返回原字符串
      */
     public static String removePrefix(String str, String prefix) {
-        if(isEmpty(str) || isEmpty(prefix)){
+        if (isEmpty(str) || isEmpty(prefix)) {
             return str;
         }
 

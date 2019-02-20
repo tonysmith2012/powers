@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 
 /**
+ * Created by ApplicationPower.
  * @author ${authorName} on ${createTime}.
  */
 @SpringBootApplication

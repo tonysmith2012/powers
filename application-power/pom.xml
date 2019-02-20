@@ -7,12 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>application-power</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>application-power</name>
     <url>http://maven.apache.org</url>
 
     <properties>
-        <project.build.jdkVersion>1.8</project.build.jdkVersion>
         <!-- spring版本号 -->
         <spring.version>4.3.6.RELEASE</spring.version>
         <!-- mybatis版本号 -->
@@ -64,11 +63,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
         <!--模板引擎-->
         <dependency>
             <groupId>com.ibeetl</groupId>
@@ -81,22 +75,34 @@
             <artifactId>fastjson</artifactId>
             <version>1.1.41</version>
         </dependency>
-        <dependency>
-            <groupId>com.boco.sp</groupId>
-            <artifactId>Common-util</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.0.v20161208</version>
+                <configuration>
+                    <httpConnector>
+                        <!--host>localhost</host-->
+                        <port>8808</port>
+                    </httpConnector>
+                </configuration>
+            </plugin>
+            <!--maven 打包插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
             <!--指定maven的编译级别-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.0</version>
                 <configuration>
-                    <source>${project.build.jdkVersion}</source>
-                    <target>${project.build.jdkVersion}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

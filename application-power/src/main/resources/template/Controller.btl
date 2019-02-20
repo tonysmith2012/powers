@@ -34,10 +34,10 @@ import ${basePackage}.model.${entitySimpleName};
 import ${basePackage}.service.${entitySimpleName}Service;
 
 /**
- *
+ * Created by ApplicationPower.
  * @author ${authorName} on ${createTime}.
  */
-@Controller
+@RestController
 @RequestMapping("${firstLowerName}")
 public class ${entitySimpleName}Controller {
     /**
@@ -48,8 +48,7 @@ public class ${entitySimpleName}Controller {
 	@Resource
 	private ${entitySimpleName}Service ${firstLowerName}Service;
     <%if(add){ %>
-
-	@ResponseBody
+	
 	@PostMapping(value = "/add")
 	public CommonResult save(${entitySimpleName} entity) {
 		return ${firstLowerName}Service.save(entity);
@@ -57,7 +56,6 @@ public class ${entitySimpleName}Controller {
 	<%}%>
     <%if(update){ %>
 
-	@ResponseBody
 	@PostMapping(value = "/update")
 	public CommonResult update(${entitySimpleName} entity) {
 		return ${firstLowerName}Service.update(entity);
@@ -65,7 +63,6 @@ public class ${entitySimpleName}Controller {
     <%}%>
     <%if(delete){ %>
 
-	@ResponseBody
 	@GetMapping(value = "/delete/{id}")
 	public CommonResult delete(@PathVariable int id) {
 		return ${firstLowerName}Service.delete(id);
@@ -73,7 +70,7 @@ public class ${entitySimpleName}Controller {
     <%}%>
     <%if(query){ %>
 
-	@ResponseBody
+
 	@GetMapping(value = "/query/{id}")
 	public CommonResult queryById(@PathVariable int id) {
 		return ${firstLowerName}Service.queryById(id);
@@ -81,7 +78,7 @@ public class ${entitySimpleName}Controller {
 	<%}%>
     <%if(page){ %>
 
-    @ResponseBody
+    
     @GetMapping(value = "/page/{offset}/{limit}")
     public PageInfo queryPage(@PathVariable int offset,@PathVariable int limit) {
         return ${firstLowerName}Service.queryPage(offset,limit);
@@ -89,7 +86,7 @@ public class ${entitySimpleName}Controller {
     <%}%>
     <%if(queryToListMap){ %>
 
-    @ResponseBody
+    
     @GetMapping(value = "/listMap")
     public List<Map<String,Object>> queryToListMap(@RequestParam Map<String,Object> params) {
         return ${firstLowerName}Service.queryToListMap(params);

@@ -7,12 +7,11 @@ import java.sql.Types;
  */
 public class TypeConvert {
     /**
-     *
      * @param type
      * @param digits
      * @return
      */
-    public static String  sqlTypeToJavaType(int type, int digits) {
+    public static String sqlTypeToJavaType(int type, int digits) {
         String dataType = "";
         switch (type) {
             case Types.VARCHAR:  //12
@@ -29,6 +28,9 @@ public class TypeConvert {
                 break;
             case Types.BIGINT: //-5
                 dataType = "Long";
+                break;
+            case Types.SMALLINT:
+                dataType = "Integer";
                 break;
             case Types.DOUBLE: //8
                 dataType = "Double";
@@ -54,7 +56,7 @@ public class TypeConvert {
         return dataType;
     }
 
-    public static String processOracleType(String type){
+    public static String processOracleType(String type) {
         return null;
     }
 }

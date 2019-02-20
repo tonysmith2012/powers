@@ -1,8 +1,7 @@
 package ${basePackage}.model;
 
-import java.io.Serializable;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 
 ${modelImports}
 
@@ -12,7 +11,7 @@ ${modelImports}
  * @author ${authorName}
  * @date ${createTime}
  */
- ${apiModelProperty}
+${apiModelProperty}
 public class ${entitySimpleName} implements Serializable {
 
     private static final long serialVersionUID = ${SerialVersionUID}L;

@@ -15,6 +15,7 @@ import ${basePackage}.model.${entitySimpleName};
 
 /**
  *
+ * Created by ApplicationPower.
  * @author ${authorName} on ${createTime}.
  */
 public interface ${entitySimpleName}Service {

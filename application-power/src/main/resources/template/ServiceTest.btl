@@ -12,6 +12,7 @@ import ${basePackage}.model.${entitySimpleName};
 import ${basePackage}.service.${entitySimpleName}Service;
 
 /**
+ * Created by ApplicationPower.
  * @author ${authorName} on ${createTime}.
  */
 public class ${entitySimpleName}ServiceTest extends ServiceBaseTest {

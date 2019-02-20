@@ -3,20 +3,12 @@ package ${basePackage}.dao;
 import java.util.List;
 import java.util.Map;
 
-<%if(isMultipleDataSource){%>
-import com.power.datasource.annotations.TargetDataSource;
-
-import ${basePackage}.constants.DataSourceKey;
- <%} %>
 import ${basePackage}.model.${entitySimpleName};
 
 /**
  * Created by ApplicationPower.
  * @author ${authorName} on ${createTime}.
  */
- <%if(isMultipleDataSource){%>
-@TargetDataSource(DataSourceKey.${defaultDataSource})
- <%} %>
 public interface ${entitySimpleName}Dao {
     <%if(add){ %>
 

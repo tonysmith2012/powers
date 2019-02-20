@@ -11,6 +11,7 @@ import ${basePackage}.model.${entitySimpleName};
 
 /**
  * controller 接口单元测试
+ * Created by ApplicationPower.
  * @author ${authorName} on ${createTime}.
  *
  */

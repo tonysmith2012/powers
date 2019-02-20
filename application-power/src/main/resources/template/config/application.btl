@@ -20,12 +20,6 @@ spring:
     testWhileIdle: true
     testOnBorrow: false
     testOnReturn: false
-  <%if(isJTA){%>
-  # transaction manager
-  jta:
-    log-dir: classpath:tx-logs
-    transaction-manager-id: txManager
-  <%}%>
 
 
 mybatis:
@@ -34,7 +28,3 @@ mybatis:
   mapper-locations: classpath*:${mappingDir}/mapping/*.xml
 server:
   port: 8080
-  undertow:
-     accesslog:
-      enabled: true
-      dir: ../logs
